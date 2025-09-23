@@ -1,0 +1,22 @@
+// Import the HTTP module
+const http = require("http");
+// Create the server
+const server = http.createServer((req, res) => {
+// Set the response header
+res.writeHead(200, { "Content-Type": "text/html" });
+// Dynamic content
+const currentTime = new Date().toLocaleString();
+const responseHTML =
+<h1>Welcome to My Node.js Server</h1>
+<p>Dynamic Response Example</p>
+<p>Current Date & Time: <b>${currentTime}</b>>/p>
+<p>You accessed: <b>${req.url} </b></p>
+// Send the response
+res.end(responseHTML);
+});
+// Define the port
+const PORT = 3000;
+// Start the server
+server.listen(PORT, (0=> {
+console.log( Server running at http://localhost:${PORT}');
+});
